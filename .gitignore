@@ -1,0 +1,8 @@
+**/target
+*/**/Cargo.lock
+*/**/xcuserdata/**
+*.xcworkspace
+*.xcscheme
+*.flo
+SVGKit
+.DS_Store

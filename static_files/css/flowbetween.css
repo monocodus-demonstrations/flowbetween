@@ -1,0 +1,307 @@
+@font-face {
+    font-family: "lato";
+    src: url("../fonts/lato/Lato-Regular.woff2");
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: "lato";
+    src: url("../fonts/lato/Lato-Thin.woff2");
+    font-weight: 100;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: "lato";
+    src: url("../fonts/lato/Lato-Bold.woff2");
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+html, body {
+    margin:         0;
+    padding:        0;
+    background:     #333333;
+    width:          100%;
+    height:         100%;
+    overflow:       hidden;
+    font-family:    "lato", "helvetica", sans-serif;
+    font-weight:    400;
+}
+
+#root {
+    width:          100%;
+    height:         100%;
+    overflow:       hidden;
+}
+
+#root * {
+    box-sizing:     border-box;
+    position:       absolute;
+}
+
+#root > * {
+    width:  100%;
+    height: 100%;
+}
+
+#root .text {
+    width: 100%;
+}
+
+#root .flo-slider-input {
+    padding:    0;
+    margin:     0;
+    width:      100%;
+}
+
+#root .badged {
+    box-shadow:     0px 0px 4px rgba(180, 200, 220, 0.9);
+}
+
+flo-button flo-empty,
+flo-button flo-container,
+flo-button flo-label {
+    pointer-events: none;
+}
+
+flo-label {
+    display:                flex;
+    flex-direction:         row;
+    align-items:            center;
+    user-select:            none;
+    -moz-user-select:       none;
+    -webkit-user-select:    none;
+    -ms-user-select:        none;
+}
+
+flo-button.tool-button,
+flo-button.tool-button:hover,
+flo-button.tool-button:active {
+    background:     none;
+    border-width:   0px;
+    text-shadow:    none;
+    transition:     none;
+    box-shadow:     none;
+    padding:        0 0 0 0;
+}
+
+flo-button {
+    user-select:            none;
+    -moz-user-select:       none;
+    -webkit-user-select:    none;
+    -ms-user-select:        none;
+    cursor:                 pointer;
+    border-style:           solid;
+    border-radius:          6px;
+    border-width:           0.5px;
+    border-color:           rgba(160, 175, 175, 1.0);
+    box-shadow:             0 0 0.5px 0.5px rgba(64, 128, 128, 0.9);
+    padding:                3px 3px 3px 3px;
+    background-color:       rgba(51, 51, 51, 0.5);
+    transition:             border-color 0.4s ease-in, box-shadow 0.4s ease-in, background-color 0.3s ease-in;
+}
+
+flo-button.selected {
+    background-color:   rgba(150, 140, 220, 0.8);
+    box-shadow:         0 0 1px 1px rgba(160, 175, 175, 1.0);
+    transition:         border-color 0.4s, box-shadow 0.4s ease-in, background-color 0.4s ease-in;
+}
+
+flo-button:hover {
+    box-shadow:             0 0 0.5px 1px rgba(160, 175, 175, 1.0);
+    background-color:       rgba(64, 72, 72, 0.8);
+    transition:             box-shadow 0.4s ease-in, background-color 0.15s ease-in;
+}
+
+flo-button.selected:hover {
+    background-color:   rgba(160, 150, 200, 0.8);
+    transition:         background-color 0.4s ease-in;
+}
+
+flo-button:active {
+    box-shadow:             0 0 1px 1px rgba(160, 175, 175, 1.0);
+    text-shadow:            0px 0px 2px rgba(0, 0, 0, 0.7);
+    background-color:       rgba(120, 140, 140, 0.8);
+    transition:             text-shadow 0.1s ease-in, box-shadow 0.1s ease-in, background-color 0.1s ease-in;
+}
+
+.button-group flo-button.selected,
+.button-group flo-button.selected:hover,
+.button-group flo-button.selected:active {
+    border-left-style:  solid;
+    border-right-style: solid;
+    transition:         border-color 0.4s ease-in, box-shadow 0.4s ease-in, background-color 0.3s ease-in;
+}
+
+.button-group flo-button,
+.button-group flo-button:hover,
+.button-group flo-button:active {
+    box-shadow:             none;
+    border-radius:          0px;
+    border-right-style:     none;
+}
+
+.button-group flo-button:first-child {
+    border-width:   0.5px; 
+    border-radius:  16px 0px 0px 16px;
+}
+
+.button-group flo-button:last-child {
+    border-left-style:  solid;
+    border-right-style: solid;
+    border-width:       0.5px; 
+    border-radius:      0px 16px 16px 0px;
+    margin-right:       -1px;
+}
+
+flo-button.disabled,
+flo-button.disabled:hover,
+flo-button.disabled:active {
+    cursor:             default;
+    box-shadow:         none;
+    text-shadow:        none;
+    border-width:       1.0px;
+    border-color:       rgba(160, 175, 175, 0.4);
+    background-color:   rgba(120, 120, 120, 0.8);
+    transition:         border-color 0.4s, box-shadow 0.4s ease-in, background-color 0.4s ease-in;
+}
+
+flo-button.disabled > * {
+    opacity:            0.3;
+    transition:         opacity 0.4s;
+}
+
+flo-slider {
+    display:                flex;
+    flex-direction:         row;
+    align-items:            center;
+}
+
+flo-popup {
+    background-color:       rgba(24, 32, 32, 0.97);
+    border-style:           solid;
+    border-radius:          16px;
+    border-width:           2px;
+    border-color:           rgba(200, 220, 220, 1.0);
+    box-shadow:             0px 1px 4px rgba(24, 32, 32, 0.8);
+}
+
+flo-popup > deco-beak {
+    position:       absolute;
+    overflow:       hidden;
+    visibility:     hidden;
+}
+
+flo-popup > deco-beak.below {
+    top:            -16px;
+    height:         16px;
+    left:           50%;
+    width:          29px;
+    margin-left:    -14px;
+    visibility:     inherit;
+}
+
+flo-popup > deco-beak.above {
+    bottom:         -16px;
+    height:         16px;
+    left:           50%;
+    width:          29px;
+    margin-left:    -14px;
+    visibility:     inherit;
+}
+
+flo-popup > deco-beak.right {
+    left:           -16px;
+    width:          16px;
+    top:            50%;
+    height:         29px;
+    margin-top:     -14px;
+    visibility:     inherit;
+}
+
+flo-popup > deco-beak.left {
+    right:          -16px;
+    width:          16px;
+    top:            50%;
+    height:         29px;
+    margin-top:     -14px;
+    visibility:     inherit;
+}
+
+flo-popup > deco-beak:after {
+    background-color:       rgba(24, 32, 32, 0.97);
+    border-style:           solid;
+    border-width:           2px;
+    border-color:           rgba(200, 220, 220, 1.0);
+    box-shadow:             0px 1px 4px rgba(24, 32, 32, 0.8);
+
+    content:                "";
+    display:                block;
+    position:               absolute;
+    transform:              rotate(45deg);
+    width:                  20px;
+    height:                 20px;
+}
+
+flo-textbox {
+    display:                inline-block;
+}
+
+flo-textbox > input {
+    display:                block;
+    width:                  100%;
+    height:                 100%;
+    color:                  inherit;
+    font-family:            inherit;
+    font-size:              inherit;
+    font-weight:            inherit;
+    border-radius:          5px 5px 0px 0px;
+    background:             rgba(24, 32, 32, 0.2);
+    border-left:            none;
+    border-right:           none;
+    border-top:             1px solid rgba(0, 0, 0, 0.0);
+    border-bottom:          1px solid;
+    margin:                 none;
+    padding:                none;
+}
+
+flo-textbox > input:focus {
+    box-shadow:             none;
+    background:             rgba(24, 32, 32, 0.3);
+    outline:                none;
+}
+
+flo-popup > deco-beak.below:after {
+    left:                   2px;
+    top:                    5px;
+}
+
+flo-popup > deco-beak.above:after {
+    left:                   2px;
+    top:                    -13px;
+}
+
+flo-popup > deco-beak.right:after {
+    top:                    2px;
+    left:                   5px;
+}
+
+flo-popup > deco-beak.left:after {
+    left:                   -13px;
+    top:                    2px;
+}
+
+flo-cropping {
+    overflow: hidden;
+}
+
+flo-scrolling {
+    overflow:                   scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+flo-scrolling > deco-scroll-canvas {
+    z-index: -1000;
+}

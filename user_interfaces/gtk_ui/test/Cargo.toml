@@ -1,0 +1,10 @@
+[package]
+name = "flo_gtk_test"
+version = "0.1.1"
+authors = ["Andrew Hunter <andrew@logicalshift.co.uk>"]
+
+[dependencies]
+flo_ui      = { path = "../../ui" }
+flo_gtk_ui  = { path = ".." }
+
+gtk         = "0.6.0"
